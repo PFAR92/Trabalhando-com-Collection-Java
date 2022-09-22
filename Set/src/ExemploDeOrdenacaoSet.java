@@ -1,35 +1,40 @@
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class ExemploDeOrdenacaoSet {
     public static void main(String[] args) {
 
 
         System.out.println("--Ordem aleatória--");
-        Set<Serie> minhaSeries = new HashSet<>(){{
+        Set<Serie> minhasSeries = new HashSet<>(){{
             add(new Serie("got", "fantasia", 60));
             add(new Serie("dark", "drama", 60));
             add(new Serie("that '70 show", "comédia", 25));
         }};
-        for(Serie serie : minhaSeries) {
+        for(Serie serie : minhasSeries) {
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
         }
         System.out.println("---------------------------");
 
 
         System.out.println("--Ordem de inserção--");
-        Set<Serie> minhaSeries1 = new LinkedHashSet<>(){{
+        Set<Serie> minhasSeries1 = new LinkedHashSet<>(){{
             add(new Serie("got", "fantasia", 60));
             add(new Serie("dark", "drama", 60));
             add(new Serie("that '70 show", "comédia", 25));
         }};
-        for(Serie serie : minhaSeries1){
+        for(Serie serie : minhasSeries1){
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
         }
         System.out.println("---------------------------");
 
-        System.out.println("--Ordem natural--");
+        System.out.println("--Ordem natural por tempo de episódio--");
+        Set<Serie> minhasSeries2 = new TreeSet<>(minhasSeries1);
+        for(Serie serie : minhasSeries2){
+            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
+
 
 
         
@@ -37,8 +42,9 @@ public class ExemploDeOrdenacaoSet {
         
     }
 }
+}
 
-class Serie {
+class Serie implements Comparable<Serie>{
     private String nome;
     private String genero;
     private Integer tempoEpisodio;
@@ -102,6 +108,18 @@ class Serie {
             return false;
         return true;
     }
+
+    @Override
+    public int compareTo(Serie serie) {
+        int tempoEpisodio = Integer.compare(this.getTempoEpisodio(), serie.getTempoEpisodio());
+
+        if(tempoEpisodio !=0) return tempoEpisodio;
+
+        int genero = this.getGenero().compareTo(serie.getGenero());
+        return genero;
+        
+    }
     
 }
+
 
