@@ -46,8 +46,18 @@ public class ExemploDeOrdenacaoSet {
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
 
         }
-    }
+        System.out.println("---------------------------");
 
+        System.out.println("--Ordem de gênero--");
+        Set<Serie> minhasSeries4 = new TreeSet<>(new ComparatorGenero());
+        minhasSeries4.addAll(minhasSeries);
+        for(Serie serie : minhasSeries4){
+            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
+
+        }
+        System.out.println("---------------------------");
+
+    }
 }
 
 class Serie implements Comparable<Serie>{
@@ -139,6 +149,15 @@ class ComparatorNomeGeneroTempo implements Comparator<Serie>{
         if(genero != 0) return genero;
 
         return Integer.compare(s1.getTempoEpisodio(), s2.getTempoEpisodio());
+    }
+
+}
+class ComparatorGenero implements Comparator<Serie>{
+
+    @Override
+    public int compare(Serie s1, Serie s2) {
+        int genero = s1.getGenero().compareTo(s2.getGenero());
+        return genero;
     }
 
 }
