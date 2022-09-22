@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -33,15 +34,15 @@ public class ExemploDeOrdenacaoSet {
         System.out.println("--Ordem natural por tempo de episódio--");
         Set<Serie> minhasSeries2 = new TreeSet<>(minhasSeries1);
         for(Serie serie : minhasSeries2){
-            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
+            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio()); 
+        }
+        System.out.println("---------------------------");
 
+        System.out.println("--Ordem de Nome/gênero/Tempo de episódio");
 
+        Set<Serie> minhaSeries3 = new TreeSet<>(ComparatorNomeGeneroTempo);
 
-        
-        
-        
     }
-}
 }
 
 class Serie implements Comparable<Serie>{
@@ -120,6 +121,21 @@ class Serie implements Comparable<Serie>{
         
     }
     
+}
+
+class ComparatorNomeGeneroTempo implements Comparator<Serie>{
+
+    @Override
+    public int compare(Serie s1, Serie s2) {
+        int nome = s1.getNome().compareToIgnoreCase(s2.getNome());
+        if(nome != 0) return nome;
+
+        int genero = s1.getGenero().compareToIgnoreCase(s2.getGenero());
+        if(genero != 0) return genero;
+
+        return s1.getTempoEpisodio().compareTo(s2.getTempoEpisodio());
+    }
+
 }
 
 
