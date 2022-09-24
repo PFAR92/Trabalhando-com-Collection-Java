@@ -1,6 +1,8 @@
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Exercicio2 {
     
@@ -26,12 +28,20 @@ public class Exercicio2 {
             System.out.println("Nome: " + lingua.getNome() + ", Ano de criação: " + lingua.getAnoDeCriacao() + ", IDE: " + lingua.getIde());
         }
         System.out.println("--------------------------------------");
+        
+        //exiba por ordem natural
+        Set<LinguagemFavorita> linguagemOrdemNatural = new TreeSet<>(new CompareNome());
+        linguagemOrdemNatural.addAll(linguagens);
+        for(LinguagemFavorita lingua : linguagemOrdemNatural){
+            System.out.println("Nome: " + lingua.getNome() + ", Ano de criação: " + lingua.getAnoDeCriacao() + ", IDE: " + lingua.getIde());
+        }
+        System.out.println("--------------------------------------");
 
         
     }
 }
 
-class LinguagemFavorita{
+class LinguagemFavorita {
     private String nome;
     private Integer anoDeCriacao;
     private String ide;
@@ -56,11 +66,16 @@ class LinguagemFavorita{
 
     @Override
     public String toString() {
-        return "[anoDeCriacao=" + anoDeCriacao + ", ide=" + ide + ", nome=" + nome + "]";
+        return "[nome=" + nome + ", ide=" + ide + ", anoDeCriacao=" + anoDeCriacao + "]";
+    }
+}
+
+class CompareNome implements Comparator<LinguagemFavorita>{
+
+    @Override
+    public int compare(LinguagemFavorita l1, LinguagemFavorita l2) {
+        int nome = l1.getNome().compareTo(l2.getNome());
+        return nome;
     }
 
-    
-    
-    
-    
 }
