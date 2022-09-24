@@ -59,7 +59,15 @@ public class Exercicio1 {
         }
         for(String cores : arco_ires) System.out.println(cores);
         System.out.println("----------------------------");
-        
+
+        //Limpe o conjunto
+        arco_ires.clear();
+        arcoListInverse.clear();
+        arco_iresOrdenado.clear();
+
+        //Confira se o conjunto está vazio
+        System.out.println("Todas as listas estão vazias? " + arco_ires.isEmpty() + ", " + arcoListInverse.isEmpty() + ", " + arco_iresOrdenado.isEmpty());
+
         
 
         
