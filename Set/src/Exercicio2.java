@@ -60,6 +60,11 @@ public class Exercicio2 {
             System.out.println("Nome: " + lingua.getNome() + ", Ano de criação: " + lingua.getAnoDeCriacao() + ", IDE: " + lingua.getIde());
         }
         System.out.println("--------------------------------------");
+
+        //exiba as linguagens no console uma abaixo da outra
+        for(LinguagemFavorita lingua : linguagens){
+            System.out.println("Nome: " + lingua.getNome());
+        }
         
     }
 }
