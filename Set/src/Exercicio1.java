@@ -41,12 +41,25 @@ public class Exercicio1 {
 
         //Exiba todas as cores que começam com a letra ”v”
         Iterator<String> iterator = arco_ires.iterator();
+
         while(iterator.hasNext()){
             String cor = iterator.next();
             char letra = cor.charAt(0);
             if(letra == 'v') System.out.println(cor);            
         }
+        System.out.println("----------------------------");
 
+        //Remova todas as cores que não começam com a letra “v”
+        Iterator<String> iterator2 = arco_ires.iterator();
+
+        while(iterator2.hasNext()){
+            String cor = iterator2.next();
+            char letra = cor.charAt(0);
+            if(letra == 'v') iterator2.remove();;
+        }
+        for(String cores : arco_ires) System.out.println(cores);
+        System.out.println("----------------------------");
+        
         
 
         
