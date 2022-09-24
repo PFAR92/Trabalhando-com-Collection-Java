@@ -16,5 +16,8 @@ public class Exercicio1 {
 
         //exiba todas as cores uma abaixo da outra
         for(String cores : arco_ires) System.out.println(cores);
+
+        //exiba a quantidade de cores que o arco ires tem
+        System.out.println("o arco-ires tem " + arco_ires.size() + " cores");
     }
 }
