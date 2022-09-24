@@ -52,6 +52,14 @@ public class Exercicio2 {
             System.out.println("Nome: " + lingua.getNome() + ", Ano de criação: " + lingua.getAnoDeCriacao() + ", IDE: " + lingua.getIde());
         }
         System.out.println("--------------------------------------");
+
+        //Exiba por nome, ano de criação e IDE
+        Set<LinguagemFavorita> linguagemOrdemNomeAnoIde = new TreeSet<>(new CompareNomeAnoIde());
+        linguagemOrdemAnoNome.addAll(linguagens);
+        for(LinguagemFavorita lingua : linguagemOrdemNomeAnoIde){
+            System.out.println("Nome: " + lingua.getNome() + ", Ano de criação: " + lingua.getAnoDeCriacao() + ", IDE: " + lingua.getIde());
+        }
+        System.out.println("--------------------------------------");
         
     }
 }
@@ -115,6 +123,21 @@ class CompareAnoNome implements Comparator<LinguagemFavorita>{
         int nome = l1.getNome().compareTo(l2.getNome());
         
         return nome;
+    }
+
+}
+
+class CompareNomeAnoIde implements Comparator<LinguagemFavorita>{
+
+    @Override
+    public int compare(LinguagemFavorita l1, LinguagemFavorita l2) {
+        int nome = l1.getNome().compareTo(l2.getNome());
+        if (nome != 0) return nome;
+        int ano = Integer.compare(l1.getAnoDeCriacao(), l2.getAnoDeCriacao());
+        if (ano != 0) return ano;
+        int ide = l1.getIde().compareToIgnoreCase(l2.getIde());
+
+        return ide;
     }
 
 }
