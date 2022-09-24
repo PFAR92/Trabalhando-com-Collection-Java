@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Exercicio2 {
@@ -13,10 +14,20 @@ public class Exercicio2 {
         for(LinguagemFavorita lingua : linguagens){
             System.out.println("Nome: " + lingua.getNome() + ", Ano de criação: " + lingua.getAnoDeCriacao() + ", IDE: " + lingua.getIde());
         }
+        System.out.println("--------------------------------------");
 
         //Exiba por ordem de inserção
-        
+        Set<LinguagemFavorita> linguagens1 = new LinkedHashSet<>(){{
+            add(new LinguagemFavorita("Java", 1991, "intellij"));
+            add(new LinguagemFavorita("C#", 2013, "Visual Basic"));
+            add(new LinguagemFavorita("python ", 1990, "VS code"));
+        }};
+        for(LinguagemFavorita lingua : linguagens1){
+            System.out.println("Nome: " + lingua.getNome() + ", Ano de criação: " + lingua.getAnoDeCriacao() + ", IDE: " + lingua.getIde());
+        }
+        System.out.println("--------------------------------------");
 
+        
     }
 }
 
