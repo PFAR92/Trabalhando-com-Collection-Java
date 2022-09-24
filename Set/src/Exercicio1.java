@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+
 
 public class Exercicio1 {
     public static void main(String[] args) {
@@ -24,11 +28,21 @@ public class Exercicio1 {
         System.out.println("----------------------------");
 
         //exiba as cores em ordem alfabética
-        Set<String> arco_iresAlf = new TreeSet<>(arco_ires);
-        for(String cores : arco_iresAlf) System.out.println(cores);
+        Set<String> arco_iresOrdenado = new TreeSet<>(arco_ires);
+        for(String cores : arco_iresOrdenado) System.out.println(cores);
+        System.out.println("----------------------------");
+
+        //exiba as cores na ordem inversa do que foi informado
+        List<String> arcoListInverse = new ArrayList<>(arco_ires);
+        Collections.reverse(arcoListInverse);
+        for(String cores : arcoListInverse) System.out.println(cores);
         System.out.println("----------------------------");
 
         
 
+        
+
     }
+    
 }
+
