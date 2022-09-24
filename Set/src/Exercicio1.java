@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -37,6 +38,14 @@ public class Exercicio1 {
         Collections.reverse(arcoListInverse);
         for(String cores : arcoListInverse) System.out.println(cores);
         System.out.println("----------------------------");
+
+        //Exiba todas as cores que começam com a letra ”v”
+        Iterator<String> iterator = arco_ires.iterator();
+        while(iterator.hasNext()){
+            String cor = iterator.next();
+            char letra = cor.charAt(0);
+            if(letra == 'v') System.out.println(cor);            
+        }
 
         
 
