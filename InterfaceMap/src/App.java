@@ -1,7 +1,9 @@
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.Map.Entry;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -41,6 +43,15 @@ public class App {
         System.out.println("---------------------------");
 
         //exiba o modelo mais econômico e seu consumo
+        Double melhorConsumo = Collections.max(carrosPopulares.values());
+        Set<Entry<String, Double>> entrySet = carrosPopulares.entrySet();
+        String carroMaisEficiente = "";
+        for(Map.Entry<String, Double> entry : entrySet){
+            if(entry.getValue().equals(melhorConsumo)) carroMaisEficiente = entry.getKey();
+        }
+        System.out.println("O carro mais eficiente é o " + carroMaisEficiente + " com o consumo de " + melhorConsumo + " km/l");
+        System.out.println("---------------------------");
+        
         
 
         
