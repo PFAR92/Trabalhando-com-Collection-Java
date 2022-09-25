@@ -28,6 +28,11 @@ public class App {
         //Exiba o consumo do uno
         System.out.println(carrosPopulares.get("uno"));
         System.out.println("---------------------------");
+
+        //Exiba os modelos
+        for(String carros : carrosPopulares.keySet()) System.out.println(carros);
+        System.out.println("---------------------------");
+        
         
     }
 }
