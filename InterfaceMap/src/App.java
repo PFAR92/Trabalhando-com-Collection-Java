@@ -16,8 +16,18 @@ public class App {
         System.out.println("---------------------------");
 
         //substitua o consumo do Gol por 15.2 km/l
-        carrosPopulares.replace("gol", 14.4, 15.2);
+        //carrosPopulares.replace("gol", 14.4, 15.2);
+        carrosPopulares.put("gol", 15.2);
         System.out.println(carrosPopulares);
+        System.out.println("---------------------------");
+
+        //confira se o modelo tucson está no dicionário
+        System.out.println(carrosPopulares.containsKey("tucson"));
+        System.out.println("---------------------------");
+
+        //Exiba o consumo do uno
+        System.out.println(carrosPopulares.get("uno"));
+        System.out.println("---------------------------");
         
     }
 }
