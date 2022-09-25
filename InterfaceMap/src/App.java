@@ -1,5 +1,7 @@
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -32,7 +34,15 @@ public class App {
         //Exiba os modelos
         for(String carros : carrosPopulares.keySet()) System.out.println(carros);
         System.out.println("---------------------------");
+
+        //Exiba os consumos dos carros
+        Collection<Double> consumos = carrosPopulares.values();
+        System.out.println(consumos);
+        System.out.println("---------------------------");
+
+        //exiba o modelo mais econômico e seu consumo
         
+
         
     }
 }
