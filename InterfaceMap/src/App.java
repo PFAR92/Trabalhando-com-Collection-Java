@@ -47,13 +47,25 @@ public class App {
         Set<Entry<String, Double>> entrySet = carrosPopulares.entrySet();
         String carroMaisEficiente = "";
         for(Map.Entry<String, Double> entry : entrySet){
-            if(entry.getValue().equals(melhorConsumo)) carroMaisEficiente = entry.getKey();
+            if(entry.getValue().equals(melhorConsumo)) {
+                carroMaisEficiente = entry.getKey();
+                System.out.println("O carro mais eficiente é o " + carroMaisEficiente + " com o consumo de " + melhorConsumo + " km/l");
+            }
         }
-        System.out.println("O carro mais eficiente é o " + carroMaisEficiente + " com o consumo de " + melhorConsumo + " km/l");
+        
+        System.out.println("---------------------------");
+
+        //exiba o modelo menos econômico e seu consumo
+        Double piorConsumo = Collections.min(carrosPopulares.values());
+        String carroMenosEficiente = "";
+        for(Map.Entry<String, Double> entry : entrySet){
+            if(entry.getValue().equals(piorConsumo)){
+                carroMenosEficiente = entry.getKey();
+                System.out.println("O carro menos eficiente é o " + carroMenosEficiente + " com o consumo de " + piorConsumo + " km/l");
+            }
+        }
         System.out.println("---------------------------");
         
-        
-
         
     }
 }
