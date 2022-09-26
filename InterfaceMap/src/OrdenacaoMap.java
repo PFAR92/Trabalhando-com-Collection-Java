@@ -1,8 +1,10 @@
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.Map.Entry;
 
 public class OrdenacaoMap {
@@ -36,6 +38,15 @@ public class OrdenacaoMap {
             System.out.println("Autor: " + livro.getKey() + " - Livro: " + livro.getValue().getNome()); 
         }
         System.out.println("============================");
+
+        //Ordem alfabética dos nomes dos livros
+        Set<Map.Entry<String, Livro>> meusLivros3 = new TreeSet<>(new ComparatorNome());
+        meusLivros3.addAll(meusLivros.entrySet());
+        for(Map.Entry<String, Livro> livro : meusLivros3){
+            System.out.println("Autor: " + livro.getKey() + " - Livro: " + livro.getValue().getNome());
+        }
+        System.out.println("============================");
+
         
     }
 }
@@ -91,10 +102,15 @@ class Livro{
     public String toString() {
         return "Livro [nome=" + nome + ", pagina=" + pagina + "]";
     }
-
     
+}
 
-    
+class ComparatorNome implements Comparator<Map.Entry<String, Livro>>{
 
-    
+    @Override
+    public int compare(Entry<String, Livro> l1, Entry<String, Livro> l2) {
+
+        return l1.getValue().getNome().compareToIgnoreCase(l2.getValue().getNome());
+    }
+
 }
