@@ -3,8 +3,10 @@ import java.util.Map;
 
 public class OrdenacaoMap {
     public static void main(String[] args) {
-        Map<String, Integer> livrosFavoritos = new HashMap<>(){{
-            put("Howking, Stephen", 256);
+        Map<String, Livro> meusLivros = new HashMap<>(){{
+            put("Hawking, Stephen", new Livro("Uma Breve História do Tempo", 256));
+            put("Duhiga, Charles", new Livro("O Poder do Hábito", 408));
+            put("Harari, Yuval Noah", new Livro("21 lições para o século 21", 432));
         }};
     }
 }
