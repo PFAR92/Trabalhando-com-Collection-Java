@@ -105,5 +105,11 @@ public class InterfaceMap {
         Map<String, Double> carrosPopulares2 = new TreeMap<>(carrosPopulares1);
         System.out.println(carrosPopulares2);
         System.out.println("---------------------------");
+
+        //apague o conjunto de carros
+        carrosPopulares.clear();
+
+        //confira se o dicionário está vazio
+        System.out.println("Os dicionários estão vazios: " + carrosPopulares.isEmpty());
     }
 }
