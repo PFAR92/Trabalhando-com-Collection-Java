@@ -1,5 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
 
 public class OrdenacaoMap {
     public static void main(String[] args) {
@@ -8,6 +10,14 @@ public class OrdenacaoMap {
             put("Duhiga, Charles", new Livro("O Poder do Hábito", 408));
             put("Harari, Yuval Noah", new Livro("21 lições para o século 21", 432));
         }};
+
+        //Exiba autor e livro em ordem aleatoria
+        for(Map.Entry<String, Livro> livro : meusLivros.entrySet()){
+            System.out.println("Autor: " + livro.getKey() + " - Livro: " + livro.getValue().getNome());
+        }
+        System.out.println("============================");
+
+        //exiba por ordem de inserção
     }
 }
 class Livro{
