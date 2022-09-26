@@ -76,6 +76,10 @@ public class InterfaceMap {
         System.out.println("A soma dos consumos é " + soma);
         System.out.println("---------------------------");
         
+        //exiba a media dos consumos desse dicionário
+        System.out.println("A média dos consumos é " + soma / carrosPopulares.values().size());
+        System.out.println("---------------------------");
+
         
         
     }
