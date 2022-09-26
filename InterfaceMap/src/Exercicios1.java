@@ -99,7 +99,11 @@ public class Exercicios1 {
         }
         System.out.println("============================");
 
+        //Apague os dicionários
+        estadoPopulacao.clear();
+        estadoPopulacao1.clear();
         
+        System.out.println("OS dicionarios estão vazios: " + estadoPopulacao.isEmpty() + ", " + estadoPopulacao1.isEmpty());
 
         
 
