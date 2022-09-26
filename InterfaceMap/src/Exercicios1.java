@@ -1,6 +1,9 @@
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 
 public class Exercicios1 {
@@ -49,7 +52,21 @@ public class Exercicios1 {
         }
         System.out.println("============================");
 
+        //Ordene os estados e suas pupulações em ordem alfabética
+        Map<String, Integer> estadoPopulacao2 = new TreeMap<>(estadoPopulacao); 
+        for(Map.Entry<String, Integer> populacao : estadoPopulacao2.entrySet()){
+            System.out.println("O estado " + populacao.getKey() + " tem uma população de " + populacao.getValue());
+        }
+        System.out.println("============================");      
         
+        //exiba o estado com menor população e sua quantidade
+        int menorPopulacao = Collections.min(estadoPopulacao2.values());
+        for(Map.Entry<String, Integer> populacao : estadoPopulacao2.entrySet()){
+            if(populacao.getValue().equals(menorPopulacao)){
+                System.out.println("A menor população é do estado " + populacao.getKey() + " com uma população de " + populacao.getValue());
+            }
+        }
+        System.out.println("============================"); 
         
     }
 }
