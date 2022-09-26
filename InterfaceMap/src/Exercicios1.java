@@ -89,6 +89,18 @@ public class Exercicios1 {
         System.out.println("A média da população é " + soma / estadoPopulacao2.size());
         System.out.println("============================"); 
 
+        //remova os estados com a população menor que 4000000
+        Iterator<Integer> iterator1 = estadoPopulacao2.values().iterator();
+        while(iterator1.hasNext()){
+            if(iterator1.next() < 4000000) iterator1.remove();
+        }
+        for(Map.Entry<String, Integer> populacao : estadoPopulacao2.entrySet()){
+            System.out.println("O estado " + populacao.getKey() + " tem uma população de " + populacao.getValue());
+        }
+        System.out.println("============================");
+
+        
+
         
 
     }
