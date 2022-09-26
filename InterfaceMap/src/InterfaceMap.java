@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.Map.Entry;
 
 public class InterfaceMap {
@@ -99,6 +100,10 @@ public class InterfaceMap {
         }};
         System.out.println(carrosPopulares1);
         System.out.println("---------------------------");
-        
+
+        //exiba o dicionario ordenado pelo modelo
+        Map<String, Double> carrosPopulares2 = new TreeMap<>(carrosPopulares1);
+        System.out.println(carrosPopulares2);
+        System.out.println("---------------------------");
     }
 }
