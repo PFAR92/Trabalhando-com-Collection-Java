@@ -47,7 +47,16 @@ public class OrdenacaoMap {
         }
         System.out.println("============================");
 
-        
+        //Ordene por número de páginas
+        Set<Map.Entry<String, Livro>> meusLivros4 = new TreeSet<>(new ComparatorPagina());
+        meusLivros4.addAll(meusLivros.entrySet());
+        for(Map.Entry<String, Livro> livro : meusLivros4){
+            System.out.println("Autor: " + livro.getKey() + " - Livro: " + livro.getValue().getNome() + " - Com " + livro.getValue().getPagina() + " de páginas");
+        }
+        System.out.println("============================");
+
+
+
     }
 }
 class Livro{
@@ -112,5 +121,16 @@ class ComparatorNome implements Comparator<Map.Entry<String, Livro>>{
 
         return l1.getValue().getNome().compareToIgnoreCase(l2.getValue().getNome());
     }
+
+}
+
+class ComparatorPagina implements Comparator<Map.Entry<String, Livro>>{
+
+    @Override
+    public int compare(Entry<String, Livro> l1, Entry<String, Livro> l2) {
+        return Integer.compare(l1.getValue().getPagina(), l2.getValue().getPagina());
+    }
+
+    
 
 }
