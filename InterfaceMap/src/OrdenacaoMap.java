@@ -1,6 +1,8 @@
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.Map.Entry;
 
 public class OrdenacaoMap {
@@ -18,6 +20,23 @@ public class OrdenacaoMap {
         System.out.println("============================");
 
         //exiba por ordem de inserção
+        Map<String, Livro> meusLivros1 = new LinkedHashMap<>(){{
+            put("Hawking, Stephen", new Livro("Uma Breve História do Tempo", 256));
+            put("Duhiga, Charles", new Livro("O Poder do Hábito", 408));
+            put("Harari, Yuval Noah", new Livro("21 lições para o século 21", 432));
+        }};
+        for(Map.Entry<String, Livro> livro : meusLivros1.entrySet()){
+            System.out.println("Autor: " + livro.getKey() + " - Livro: " + livro.getValue().getNome());
+        }
+        System.out.println("============================");
+
+        //ordem alfabética dos autores
+        Map<String, Livro> meusLivros2 = new TreeMap<>(meusLivros);
+        for(Map.Entry<String, Livro> livro : meusLivros2.entrySet()){
+            System.out.println("Autor: " + livro.getKey() + " - Livro: " + livro.getValue().getNome()); 
+        }
+        System.out.println("============================");
+        
     }
 }
 class Livro{
