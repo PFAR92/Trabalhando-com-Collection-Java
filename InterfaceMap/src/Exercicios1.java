@@ -68,5 +68,15 @@ public class Exercicios1 {
         }
         System.out.println("============================"); 
         
+        //exiba o estado com maior população e sua quantidade
+        int maiorPopulacao = Collections.max(estadoPopulacao2.values());
+        for(Map.Entry<String, Integer> populacao : estadoPopulacao2.entrySet()){
+            if(populacao.getValue().equals(maiorPopulacao)){
+                System.out.println("A maior população é do estado " + populacao.getKey() + " com uma população de " + populacao.getValue());
+            }
+        }
+        System.out.println("============================"); 
+
+        
     }
 }
