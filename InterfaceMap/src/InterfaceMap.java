@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
-public class App {
+public class InterfaceMap {
     public static void main(String[] args) throws Exception {
         
         //Crie uma dicionário que relacione os modelos e seus respectivos consumos
