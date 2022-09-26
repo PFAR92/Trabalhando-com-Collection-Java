@@ -80,7 +80,15 @@ public class InterfaceMap {
         System.out.println("A média dos consumos é " + soma / carrosPopulares.values().size());
         System.out.println("---------------------------");
 
+        //remova os modelos com comsumo igual a 15.6
+        Iterator<Double> iterator1 = carrosPopulares.values().iterator();
+        while(iterator1.hasNext()){
+            if(iterator1.next().equals(15.6)) iterator1.remove();
+        }
+        System.out.println(carrosPopulares);
+        System.out.println("---------------------------");
         
+
         
     }
 }
