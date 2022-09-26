@@ -77,6 +77,14 @@ public class Exercicios1 {
         }
         System.out.println("============================"); 
 
+        //Exiba a soma da população desses estados
+        Iterator<Integer> iterator = estadoPopulacao2.values().iterator();
+        int soma = 0;
+        while(iterator.hasNext()) soma += iterator.next();
+
+        System.out.println("A soma da população é " + soma);
+        System.out.println("============================"); 
+
         
     }
 }
