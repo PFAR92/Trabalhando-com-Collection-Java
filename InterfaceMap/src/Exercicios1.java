@@ -1,7 +1,7 @@
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
+
 
 public class Exercicios1 {
     public static void main(String[] args) {
@@ -33,7 +33,19 @@ public class Exercicios1 {
 
         //Exiba a população de pernambuco
         for(Map.Entry<String, Integer> populacao : estadoPopulacao.entrySet()){
-            if(populacao.getKey().equals("PE")) System.out.println("A população de PE é de " + populacao.getValue());
+            System.out.println("O estado " + populacao.getKey() + " tem uma população de " + populacao.getValue());
+        }
+        System.out.println("============================");
+
+        //Exiba todos os estados e suas populações na ordem que foi informado
+        Map<String, Integer> estadoPopulacao1 = new LinkedHashMap<>(){{
+            put("PE", 9616621);
+            put("AL", 3351543);
+            put("CE", 9187103);
+            put("RN", 3534265);
+        }};
+        for(Map.Entry<String, Integer> populacao : estadoPopulacao1.entrySet()){
+            System.out.println("O estado " + populacao.getKey() + " tem uma população de " + populacao.getValue());
         }
         System.out.println("============================");
 
