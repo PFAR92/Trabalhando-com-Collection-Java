@@ -85,6 +85,11 @@ public class Exercicios1 {
         System.out.println("A soma da população é " + soma);
         System.out.println("============================"); 
 
+        //exiba a média da população
+        System.out.println("A média da população é " + soma / estadoPopulacao2.size());
+        System.out.println("============================"); 
+
         
+
     }
 }
