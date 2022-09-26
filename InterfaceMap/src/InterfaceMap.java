@@ -1,6 +1,7 @@
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
@@ -65,6 +66,16 @@ public class InterfaceMap {
             }
         }
         System.out.println("---------------------------");
+
+        //exiba as somas dos consumos
+        double soma = 0;
+        Iterator<Double> iterator = carrosPopulares.values().iterator();
+        while(iterator.hasNext()){
+            soma += iterator.next();
+        }
+        System.out.println("A soma dos consumos é " + soma);
+        System.out.println("---------------------------");
+        
         
         
     }
