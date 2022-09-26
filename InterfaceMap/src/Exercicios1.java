@@ -15,6 +15,12 @@ public class Exercicios1 {
         }
         System.out.println("============================");
 
+        //Substitua a população do estado de RN por 3354165
+        estadoPopulacao.put("RN", 3354165);
+        for(Map.Entry<String, Integer> populacao : estadoPopulacao.entrySet()){
+            System.out.println("O estado " + populacao.getKey() + " tem uma população de " + populacao.getValue());
+        }
+        System.out.println("============================");
         
     }
 }
