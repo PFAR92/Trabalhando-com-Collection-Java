@@ -1,4 +1,4 @@
-package RefatoracaoOrdenacaoMap;
+package refatoracao_ordenacao_map;
 
 import java.util.Objects;
 
