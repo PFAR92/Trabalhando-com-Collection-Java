@@ -70,6 +70,7 @@ public class ExercicioStreamApi {
 
         collect.removeIf(t -> (t % 2 != 0));
         System.out.println(collect);
+        System.out.println("===================================");
         
     }
 }
