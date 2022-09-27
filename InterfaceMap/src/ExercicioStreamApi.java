@@ -2,7 +2,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.swing.text.html.HTMLEditorKit.Parser;
 
@@ -104,6 +106,16 @@ public class ExercicioStreamApi {
             .ifPresent(System.out::println);
         System.out.println("===================================");
 
+        System.out.println("Pegue apenas os números impares e some");
+
+        int soma = collect.stream()
+            .filter(t -> (t % 2 != 0))
+            .mapToInt(Integer::intValue)
+            .sum();
+        System.out.println(soma);
+        System.out.println("===================================");
+
         
+            
     }
 }
