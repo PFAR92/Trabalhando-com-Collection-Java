@@ -1,7 +1,10 @@
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import javax.swing.text.html.HTMLEditorKit.Parser;
 
 public class ExercicioStreamApi {
     public static void main(String[] args) {
@@ -77,6 +80,14 @@ public class ExercicioStreamApi {
         numerosAleatorios.stream().skip(3).forEach(System.out::println);
         System.out.println("===================================");
 
-        
+        System.out.println("Retirando os números repetidos da lista quantos números ficam?");
+
+        long numerosUnicos = numerosAleatorios.stream()
+            .distinct()
+            .count();
+        System.out.println(numerosUnicos);
+        System.out.println("===================================");
+            
+            
     }
 }
