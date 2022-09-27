@@ -1,6 +1,5 @@
 package refatoracao_ordenacao_map;
 
-import java.text.CompactNumberFormat;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.function.Function;
@@ -94,7 +93,7 @@ public class ExercicioProposto03 {
                 @Override
                 public Integer apply(Entry<Integer, Contato> cont) {
 
-                    return cont.getValue().getNome().;
+                    return cont.getValue().getNome().length();
                 }
                 
             }));
