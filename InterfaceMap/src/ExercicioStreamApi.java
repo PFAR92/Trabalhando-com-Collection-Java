@@ -69,11 +69,11 @@ public class ExercicioStreamApi {
             .ifPresent(System.out::println); 
         System.out.println("===================================");  
         
-        System.out.println("Remova os valores ímpares");
+        /* System.out.println("Remova os valores ímpares");
 
         collect.removeIf(t -> (t % 2 != 0));
         System.out.println(collect);
-        System.out.println("===================================");
+        System.out.println("==================================="); */
 
         System.out.println("Ignore os 3 primeiros elementos da lista e imprima o restante");
 
@@ -88,6 +88,14 @@ public class ExercicioStreamApi {
         System.out.println(numerosUnicos);
         System.out.println("===================================");
             
-            
+        System.out.println("Mostre o menor valor da lista");
+
+        collect.stream()
+            .mapToInt(Integer::intValue)
+            .min()
+            .ifPresent(System.out::println);
+        System.out.println("===================================");
+
+        
     }
 }
