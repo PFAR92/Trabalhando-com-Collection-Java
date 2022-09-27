@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ExercicioStreamApi {
@@ -36,6 +37,22 @@ public class ExercicioStreamApi {
             .map(Integer::parseInt)
             .collect(Collectors.toList());
         collect.forEach(System.out::println);
+
+        System.out.println("===================================");
+
+        System.out.println("Pegue os numeros pares e maiores que 2 e coloque em uma lista");
+        List<Integer> listParesMaioresQue2 = collect.stream()
+            .filter(new Predicate<Integer>() {
+
+                @Override
+                public boolean test(Integer integer) {
+                    if(integer % 2 == 0 && integer > 2) return true;
+                    return false;
+                }
+                
+            }).collect(Collectors.toList());
+            System.out.println(listParesMaioresQue2);
+        
         
     }
 }
