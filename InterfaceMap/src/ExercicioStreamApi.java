@@ -96,6 +96,14 @@ public class ExercicioStreamApi {
             .ifPresent(System.out::println);
         System.out.println("===================================");
 
+        System.out.println("Mostre o maior valor da lista");
+
+        collect.stream()
+            .mapToInt(Integer::intValue)
+            .max()
+            .ifPresent(System.out::println);
+        System.out.println("===================================");
+
         
     }
 }
