@@ -1,12 +1,8 @@
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import javax.swing.text.html.HTMLEditorKit.Parser;
 
 public class ExercicioStreamApi {
     public static void main(String[] args) {
@@ -115,7 +111,20 @@ public class ExercicioStreamApi {
         System.out.println(soma);
         System.out.println("===================================");
 
-        
+        System.out.println("Mostre a lista na ordem numerica");
+
+        collect.stream()
+            .sorted(Integer::compare)
+            .forEach(System.out::println);
+        System.out.println("===================================");
+            
+        System.out.println("Agrupe os valores ímpares múltiplos de 3 ou de 5:");
+//        dica: collect(Collectors.groupingBy(new Function())
+        Map<Boolean, List<Integer>> collectNumerosMultiplosDe3E5 = collect.stream()
+                .collect(Collectors.groupingBy(i -> (i % 3 == 0 || i % 5 == 0)));
+        System.out.println(collectNumerosMultiplosDe3E5);
+            
+
             
     }
 }
