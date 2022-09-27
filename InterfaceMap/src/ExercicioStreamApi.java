@@ -50,9 +50,23 @@ public class ExercicioStreamApi {
                 }
                 
             }).collect(Collectors.toList()); */
-            List<Integer> listParesMaioresQue2 = collect.stream()
-            .filter( integer -> (integer % 2 == 0 && integer > 2)) .collect(Collectors.toList());
-            System.out.println(listParesMaioresQue2);
+        List<Integer> listParesMaioresQue2 = collect.stream()
+        .filter( integer -> (integer % 2 == 0 && integer > 2)) .collect(Collectors.toList());
+        System.out.println(listParesMaioresQue2);
+
+        System.out.println("===================================");
+
+        System.out.println("Mostre a média dos números");
+
+        /* numerosAleatorios.stream()
+            .mapToInt(value -> Integer.parseInt(value)); */
+            numerosAleatorios.stream()
+            .mapToInt(Integer::parseInt)
+            .average()
+            .ifPresent(System.out::println); 
+        System.out.println("===================================");  
+        
+        System.out.println("Remova os valores ímpares");
         
         
     }
