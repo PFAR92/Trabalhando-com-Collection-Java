@@ -1,21 +1,24 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
 
 import static javax.swing.UIManager.put;
 
 public class teste {
 
     public static void main(String[] args) {
-        public static void main(String[] args) throws Exception {
 
-            //Crie uma dicionário que relacione os modelos e seus respectivos consumos
-            Map<String, Double> carrosPopulares = new HashMap<>(){{}};
-            put("gol", 14.4);
-            put("uno", 15.6);
-            put("mobi", 16.1);
-            put("hb20", 14.5);
-            put("kwid", 15.6);
+            Map<Integer, Contato> agenda = new HashMap<>() {{
+                put(1, new Contato("Simba", 5555));
+                put(4, new Contato("Cami", 1111));
+                put(3, new Contato("Jon", 2222));
+            }};
 
+        Set<Map.Entry<Integer, Contato>> set = new TreeSet<>(Comparator.comparing(cont -> cont.getValue().getNumero()));
+
+        set.addAll(agenda.entrySet());
+        for (Map.Entry<Integer, Contato> entry: set) {
+            System.out.println(entry.getKey() + " - " + entry.getValue().getNumero() +
+                    ": " +entry.getValue().getNome());
         }
     }
 }

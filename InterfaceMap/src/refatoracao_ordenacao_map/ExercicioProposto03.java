@@ -2,7 +2,6 @@ package refatoracao_ordenacao_map;
 
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.function.Function;
 
 /*Dadas as seguintes informações  de id e contato, crie um dicionário e
 ordene este dicionário exibindo (Nome id - Nome contato);
@@ -78,41 +77,21 @@ public class ExercicioProposto03 {
         System.out.println("--\tOrdem nome contato\t--");
         //precisamos organizar os valores. Logo:
 
-        /* Set<Map.Entry<Integer, Contato>> set1 = new TreeSet<>(new Comparator<Map.Entry<Integer, Contato>>() {
+        Set<Map.Entry<Integer, Contato>> set1 = new TreeSet<>(new Comparator<Map.Entry<Integer, Contato>>() {
 
             @Override
             public int compare(Entry<Integer, Contato> cont1, Entry<Integer, Contato> cont2) {
                 int nome = cont1.getValue().getNome().compareTo(cont2.getValue().getNome());
                 return nome;
             }
-        }); */
-
-        Set<Map.Entry<Integer, Contato>> set1 = new TreeSet<>(Comparator.comparing(
-            new Function<Map.Entry<Integer, Contato>,Integer>() {
-
-                @Override
-                public Integer apply(Entry<Integer, Contato> cont) {
-
-                    return cont.getValue().getNome().length();
-                }
-                
-            }));
+        });
 
         set1.addAll(agenda.entrySet());
         for (Map.Entry<Integer, Contato> entry: set1) {
             System.out.println(entry.getKey() + " - " + entry.getValue().getNome());
         }
     }
-}
-
-/*class ComparatorOrdemNumerica implements Comparator<Map.Entry<Integer, Contato>> {
-    @Override
-    public int compare(Map.Entry<Integer, Contato> cont1, Map.Entry<Integer, Contato> cont2) {
-        return Integer.compare(cont1.getValue().getNumero(), cont2.getValue().getNumero());
-    }
-}*/
-
-class ComparatorOrdemNomeContato implements Comparator<Map.Entry<Integer, Contato>> {
+}class ComparatorOrdemNomeContato implements Comparator<Map.Entry<Integer, Contato>> {
     @Override
     public int compare(Map.Entry<Integer, Contato> cont1, Map.Entry<Integer, Contato> cont2) {
         return cont1.getValue().getNome().compareToIgnoreCase(cont2.getValue().getNome());

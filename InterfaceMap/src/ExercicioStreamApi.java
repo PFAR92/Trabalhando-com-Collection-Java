@@ -29,9 +29,13 @@ public class ExercicioStreamApi {
             .collect(Collectors.toSet());
         collectSet.forEach(System.out::println);
 
-        
+        System.out.println("===================================");
 
-
+        System.out.println("Tranforme essa lista em uma lista de números inteiros");
+        List<Integer> collect = numerosAleatorios.stream()
+            .map(Integer::parseInt)
+            .collect(Collectors.toList());
+        collect.forEach(System.out::println);
         
     }
 }
