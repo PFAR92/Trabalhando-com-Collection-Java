@@ -73,7 +73,10 @@ public class ExercicioStreamApi {
         System.out.println("===================================");
 
         System.out.println("Ignore os 3 primeiros elementos da lista e imprima o restante");
-                    
+
+        numerosAleatorios.stream().skip(3).forEach(System.out::println);
+        System.out.println("===================================");
+
         
     }
 }
