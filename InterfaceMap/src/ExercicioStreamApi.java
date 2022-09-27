@@ -71,6 +71,9 @@ public class ExercicioStreamApi {
         collect.removeIf(t -> (t % 2 != 0));
         System.out.println(collect);
         System.out.println("===================================");
+
+        System.out.println("Ignore os 3 primeiros elementos da lista e imprima o restante");
+                    
         
     }
 }
